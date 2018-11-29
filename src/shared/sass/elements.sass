@@ -1,1 +1,56 @@
 @import "imports"
+
+.bg-img
+  +fit-cover
+
+.overlay
+  position: fixed
+  z-index: 1000
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background-color: rgba(0, 0, 0, 0.5)
+  opacity: 0
+  transition: $transition
+  visibility: hidden
+  &-active
+    opacity: 1
+    visibility: visible
+
+.modal
+  position: fixed
+  z-index: 1001
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  background-color: #fff
+  opacity: 0
+  transition: $transition
+  visibility: hidden
+  &-active
+    opacity: 1
+    visibility: visible
+
+.btn-close
+  $size: 20px
+  $p: 0
+  +btn
+  +flex-center
+  position: absolute
+  top: 10px
+  right: 10px
+  width: $size
+  height: $size
+  padding: $p
+  cursor: pointer
+  span
+    position: absolute
+    display: inline-block
+    width: $size - $p * 2
+    height: 1px
+    background-color: $main
+    &:first-of-type
+      transform: rotate(45deg)
+    &:last-of-type
+      transform: rotate(-45deg)
