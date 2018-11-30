@@ -54,3 +54,16 @@
       transform: rotate(45deg)
     &:last-of-type
       transform: rotate(-45deg)
+
+.width100
+  width: 100%
+
+.tab-item
+  height: 0
+  opacity: 0
+  overflow: hidden
+  transition: opacity 0.5s ease, height 0s ease 1s
+  &-active
+    height: unset
+    opacity: 1
+    transition: opacity 0.5s ease
