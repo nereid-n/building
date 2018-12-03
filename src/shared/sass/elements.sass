@@ -55,9 +55,6 @@
     &:last-of-type
       transform: rotate(-45deg)
 
-.width100
-  width: 100%
-
 .tab-item
   height: 0
   opacity: 0
@@ -67,3 +64,12 @@
     height: unset
     opacity: 1
     transition: opacity 0.5s ease
+
+.avatar
+  +f-size(70px)
+  position: relative
+  border-radius: 50%
+  overflow: hidden
+  img
+    +fit-cover
+
