@@ -2,8 +2,7 @@ if (document.querySelector('.overlay')) {
   var overlay = document.querySelectorAll('.overlay');
   for (let i = 0; i < overlay.length; i++) {
     overlay[i].onclick = function() {
-      let modal = this.closest('.modal-wrap ').querySelector('.modal-active');
-      this.classList.remove('overlay-active');
+      let modal = this.closest('.modal-wrap');
       modal.classList.remove('modal-active');
     };
   }
@@ -15,13 +14,11 @@ if(document.querySelector('.js-modal-btn')) {
     let btn = btns[i];
     btn.onclick = function() {
       let id = btn.dataset.id;
-      let modal = document.getElementById(id);
-      let overlay = modal.closest('.modal-wrap ').querySelector('.overlay');
+      let modal = document.getElementById(id).closest('.modal-wrap');
       modal.classList.add('modal-active');
-      overlay.classList.add('overlay-active');
       if(this.closest('.js-modal')) {
         let zIndex = getComputedStyle(this.closest('.modal-wrap')).zIndex;
-        modal.closest('.modal-wrap').style.zIndex = zIndex + 1;
+        modal.style.zIndex = zIndex + 1;
       }
     }
   }
@@ -33,9 +30,7 @@ if (document.querySelector('.js-btn-close')) {
     let btn = btnModalClose[i];
     btn.onclick = function() {
       let modal = document.querySelector('.modal-active');
-      let overlay = modal.closest('.modal-wrap ').querySelector('.overlay');
       modal.classList.remove('modal-active');
-      overlay.classList.remove('overlay-active');
     };
   }
 }

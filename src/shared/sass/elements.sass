@@ -8,19 +8,13 @@
   z-index: 1000
   top: 0
   left: 0
-  width: 100vw
-  height: 100vh
+  right: 0
+  bottom: 0
   background-color: rgba(0, 0, 0, 0.5)
-  opacity: 0
-  transition: $transition
-  visibility: hidden
-  &-active
-    opacity: 1
-    visibility: visible
 
 .modal
   $p: 25px
-  position: fixed
+  position: absolute
   z-index: 1001
   top: 50%
   left: 50%
@@ -29,12 +23,20 @@
   max-width: calc(100% - 30px)
   transform: translate(-50%, -50%)
   background-color: #fff
-  opacity: 0
-  transition: $transition
-  visibility: hidden
+  &--big
+    width: 800px
   &-wrap
-    position: relative
+    position: fixed
     z-index: 1000
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    overflow: auto
+    overflow-y: scroll
+    visibility: hidden
+    opacity: 0
+    transition: $transition
   &-active
     opacity: 1
     visibility: visible
