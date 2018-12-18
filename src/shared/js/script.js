@@ -13,6 +13,7 @@ if(document.querySelector('.js-modal-btn')) {
   for (let i = 0; i < btns.length; i++) {
     let btn = btns[i];
     btn.onclick = function() {
+      e.preventDefault();
       let id = btn.dataset.id;
       let modal = document.getElementById(id).closest('.modal-wrap');
       modal.classList.add('modal-active');
