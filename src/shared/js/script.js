@@ -1,5 +1,5 @@
 if (document.querySelector('.overlay')) {
-  var overlay = document.querySelectorAll('.overlay');
+  let overlay = document.querySelectorAll('.overlay');
   for (let i = 0; i < overlay.length; i++) {
     overlay[i].onclick = function() {
       let modal = this.closest('.modal-wrap');
@@ -12,7 +12,7 @@ if(document.querySelector('.js-modal-btn')) {
   let btns = document.querySelectorAll('.js-modal-btn');
   for (let i = 0; i < btns.length; i++) {
     let btn = btns[i];
-    btn.onclick = function() {
+    btn.onclick = function(e) {
       e.preventDefault();
       let id = btn.dataset.id;
       let modal = document.getElementById(id).closest('.modal-wrap');
