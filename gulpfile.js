@@ -22,7 +22,7 @@ gulp.task('pug', function () {
         .pipe(gulp.dest('./dist'));
 });
 gulp.task('css', function () {
-    gulp.src(['./src/shared/sass/**/*.sass', './src/components/**/*.sass'])
+    gulp.src(['./src/shared/sass/**/*.scss', './src/components/**/*.scss'])
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass())
@@ -79,7 +79,7 @@ gulp.task('watch', ['pug', 'css', 'js'], function () {
 
     gulp.watch(['./src/components/**/*.pug'], ['pug']);
     gulp.watch(['./src/pages/**/*.pug'], ['pug']);
-    gulp.watch(['./src/components/**/*.sass', './src/shared/sass/**/*.sass'], ['css']);
+    gulp.watch(['./src/components/**/*.scss', './src/shared/sass/**/*.scss'], ['css']);
     gulp.watch(['./src/components/**/*.js', './src/shared/js/**/*.js'], ['js']);
 
     gulp.watch('./dist/assets/classes/*.js').on('change', browserSync.reload);
@@ -97,7 +97,7 @@ gulp.task('pug-build', function () {
         .pipe(gulp.dest('./build'));
 });
 gulp.task('css-build', function () {
-    gulp.src(['./src/shared/sass/**/*.sass', './src/components/**/*.sass'])
+    gulp.src(['./src/shared/sass/**/*.scss', './src/components/**/*.scss'])
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}))

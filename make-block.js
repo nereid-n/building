@@ -13,7 +13,7 @@ const BLOCKS_DIR = path.join(__dirname, 'src/components');
 // default content for files in new block
 const fileSources = {
     pug: `mixin {blockName}()\n\t+b.{blockName}\n\t\tblock\n`,
-    sass: `.{blockName}\n\tdisplay: block\n`,
+    scss: ``,
     js: ``,
 };
 
